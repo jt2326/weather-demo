@@ -5,20 +5,24 @@ Page({
    * 页面的初始数据
    */
   data: {
-    timenow:"",
+    //查询到的城市
     city:"",
+    //天气信息
     weatherdata:[],
+    //PM2.5
     pm:"",
+    //用户选择的城市
     usercity:"北京",
+    //获取天气信息的状况，用于页面条件渲染，当查询不到用户输入的城市时显示“您查询的城市不存在”
     error: 0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
+  //根据用户定位城市活着选择城市进行查询
   search: function(usercity) {
-    console.log('1')
-    //当输入框值为空时不进行查询操作
+    //当输入框值为空（用户查询城市为空）时不进行查询操作
     if (!usercity){
       return
     }
@@ -34,14 +38,19 @@ Page({
         var weatherinfo = res.data
         if(weatherinfo.error == -3){
           that.setData({
+            //获取结果的error error为0获取数据正常
             error: weatherinfo.error
           })
           return
         }
         that.setData({
+          //
           timenow: weatherinfo.date,
+          //查询到的城市
           city: weatherinfo.results[0].currentCity,
+          //对应的天气信息
           weatherdata: weatherinfo.results[0].weather_data,
+          //PM2.5值
           pm: weatherinfo.results[0].pm25,
           error: 0
         })
@@ -51,6 +60,7 @@ Page({
       complete: function (res) { },
     })
   },
+  //获取用户定位城市
   getusercity: function (locationParam) {
     var that = this
     wx.request({
@@ -77,13 +87,14 @@ Page({
     var that = this
     wx.getLocation({
       success: function(res) {
-        lat = res.latitude;
-        lng = res.longitude;
+        lat = res.latitude;//获取维度
+        lng = res.longitude;//获取经度
         var locationParam = lat + ',' + lng;
-        that.getusercity(locationParam)
+        that.getusercity(locationParam)//根据经纬度定位城市用到了百度地图提供的api
       },
     })
   },
+  //获取用户输入框的值
   cityname: function(e) {
     this.setData({
       usercity: e.detail.value
