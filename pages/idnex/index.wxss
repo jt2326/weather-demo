@@ -1,0 +1,77 @@
+/* pages/idnex/index.wxss */
+.search{
+  display: block;
+  width: 90%;
+  margin: 20rpx auto;
+  height: 60rpx;
+  border: 1px solid #DDDDDD;
+  border-radius: 20rpx 20rpx;
+  padding-left: 30rpx;
+}
+.notfound{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-size: 28rpx;
+  color: red;
+}
+.city{
+  display: block;
+  width: 100%;
+  text-align: center;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin-top: 20rpx;
+  background-color: #C5BFAC
+}
+.weatherinfo{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20rpx;
+  box-sizing: border-box
+}
+.weatherinfo .weabyday{
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: 2rpx 2rpx 3rpx #ccc;
+  margin-top: 30rpx;
+  background-color: #f5f6f5;
+
+}
+.weatherinfo .weabyday .day{
+  width: 100%;
+  height: 110rpx;
+  padding: 0 30rpx;
+  line-height: 110rpx;
+  background-color: #DDDDDD;
+}
+.weatherinfo .weabyday .windtemp{
+  width: 100%;
+  height: 80rpx;
+  padding: 0 30rpx;
+  line-height: 80rpx;
+}
+.weatherinfo .weabyday .more{
+  display: flex;
+  width: 100%;
+  height: 80rpx;
+  padding: 0 30rpx;
+  justify-content: space-between;
+  margin: 20rpx 0;
+}
+.weatherinfo .weabyday .more>text{
+  line-height: 80rpx
+}
+.weatherinfo .weabyday .more>.imgwrap{
+  display: flex;
+}
+.weatherinfo .weabyday .more>.imgwrap>text{
+  line-height: 80rpx;
+}
+.weatherinfo .weabyday .more image{
+  width: 80rpx;
+  height: 80rpx;
+}

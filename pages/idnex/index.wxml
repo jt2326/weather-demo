@@ -1,0 +1,23 @@
+<!--pages/idnex/index.wxml-->
+<input class='search' placeholder='请输入城市查询' bindblur='cityname'></input>
+<view wx:if="{{error===0}}">
+  <text class='city'>{{city}}{{pm}}</text>
+  <view class='weatherinfo'>
+    <view class='weabyday' wx:for="{{weatherdata}}" wx:key="{{index}}">
+      <text class='day'>{{item.date}}</text>
+      <view class='more'>
+        <view class='imgwrap'>
+          <image src='{{item.dayPictureUrl}}'></image>
+          <text>~</text>
+          <image src='{{item.nightPictureUrl}}'></image>
+        </view>
+        <text>{{item.temperature}}</text>
+      </view>
+      <text class='windtemp'>{{item.weather}}</text>
+      <text class='windtemp'>{{item.wind}}</text>
+    </view>
+  </view>
+</view>
+<view wx:else class='notfound'>
+  <text>您查询的城市不存在</text>
+</view>

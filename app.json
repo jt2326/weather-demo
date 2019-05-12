@@ -1,0 +1,17 @@
+{
+  "pages": [
+    "pages/idnex/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#AB956D",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "true"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}
